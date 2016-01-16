@@ -1,0 +1,25 @@
+html
+ head
+  title!= title
+  style
+   include ./styles/index.css
+ body
+  div.container
+   div.header: pre!=webname
+   div.mainContent
+    p Intern Details
+    form(method='POST',action='internInfo')
+     div#internName
+      | Name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      input(type='text',name='firstName' placeholder='First Name')
+      br
+      |Middle Name: 
+      input(type='text',name='middleName' placeholder='Middle Name')
+      br
+      | Last Name: &nbsp&nbsp
+      input(type='text',name='lastName' placeholder='Last Name')
+     div#dob
+      br
+      | Date Birth:&nbsp&nbsp&nbsp&nbsp
+      input(type='date' name='dateOfBirth',placeholder='Date of birth')
+     button(type='submit', name='Submit') Submit
